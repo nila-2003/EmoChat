@@ -32,8 +32,14 @@ This chatbot is based on sentiment analysis and GPT-2. It leverages pre-trained 
    ```
 ## Future Works:
 **Deployment with Vercel/Heroku**
+
 **Fine-Tuning LLM**
+
 **Advancement in Language Models**
+
 **Adding Login/Signup Features**
+
 **Improving Conversation History**
-You can view the BOT [here!](http://192.168.26.91:8501) 
+<br>
+<br>
+#### You can view the BOT [here!](http://192.168.26.91:8501) 
