@@ -51,17 +51,36 @@ def generate_response_with_sentiment(user_input):
 
 def main():
     st.title("Welcome To EmoChat!!")
-    user_input = st.text_area("Let's Chat!!!")
-    if st.button("Send"):
-        if user_input:
-            response = generate_response_with_sentiment(user_input)
-            st.text("EmoChat: " + response)
+    if 'history' not in st.session_state:
+        st.session_state.history = []
+
+    if 'user_inputs' not in st.session_state:
+        st.session_state.user_inputs = []
+
+    # Display existing user inputs
+    for idx, user_input in enumerate(st.session_state.user_inputs):
+        st.text_area(f"User :", value=user_input, key=f"user_input_{idx}")
+
+    # Allow user to input new message
+    new_input = st.text_area("Let's Chat!!")
+
+    if st.button("Generate Response"):
+        if new_input:
+            # Save new user input
+            st.session_state.user_inputs.append(new_input)
             
+            # Generate response
+            response = generate_response_with_sentiment(new_input)
+            st.text(f"EmoChat: {response}")
+
+            # Save conversation history
+            st.session_state.history.append({'user': new_input, 'bot': response})
+
     # Displaying the history tab
     st.sidebar.title("Your Past Conversations!")
-    for conversation in conversation_history:
-        st.sidebar.text(f"User: {conversation['user']}")
-        st.sidebar.text(f"EmoChat: {conversation['emobot']}")
+    for entry in st.session_state.history:
+        st.sidebar.text(f"You: {entry['user']}")
+        st.sidebar.text(f"EmoChat: {entry['bot']}")
         st.sidebar.text("------")
 
 if __name__ == "__main__":
