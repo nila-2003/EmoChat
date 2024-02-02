@@ -42,4 +42,4 @@ This chatbot is based on sentiment analysis and GPT-2. It leverages pre-trained 
 **Improving Conversation History**
 <br>
 <br>
-#### You can view the BOT [here!](http://192.168.26.91:8501) 
+#### Dive into Emochat Right Now!!
