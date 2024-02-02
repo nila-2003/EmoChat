@@ -26,7 +26,11 @@ This chatbot is based on sentiment analysis and GPT-2. It leverages pre-trained 
    ```
    pip install transformers
    ```
-5. Run the Streamlit App:
+5. Update the API_Key with your OpenAi API key
+   ```
+   openai.api_key = your_api_key
+   ```
+7. Run the Streamlit App:
    ```
    streamlit run second.py
    ```
