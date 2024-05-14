@@ -6,7 +6,7 @@ import openai
 import torch
 import warnings
 
-openai.api_key = "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"
+openai.api_key = "sk-......."
 
 warnings.filterwarnings("ignore", message="Some weights of the model checkpoint")
 
